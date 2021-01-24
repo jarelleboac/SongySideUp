@@ -1,17 +1,59 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="mystyle.css">      
         <meta charset= "utf-8">
         <title>My Flask App</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="script.js">typeWriter();</script>   
     </head>
     <body>
-
-        {% include 'includes/_navbar.html' %}
-        <div class="container">
-            {% block body %}{% endblock %}
+        <div class="body-class">
+            {% include 'includes/_navbar.html' %}
+            <!--<script>
+                var i = 0;
+                var txt = 'Lorem ipsum typing effect!'; /* The text */
+                var speed = 50; /* The speed/duration of the effect in milliseconds */
+    
+                function typeWriter() {
+                if (i < txt.length) {
+                    document.getElementById("demo").innerHTML += txt.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                }
+                }            
+            </script>-->
+            <center><h2>Song-y Side Up</h2></center>
+            <br></br>
+            <center><p>a curated playlist to start you day off with breakfast 🍳 and a song 🎵 </p></center>
+            <div class="container">
+                {% block body %}
+    
+                {% endblock %}
+            </div>
+    
+            <ul>
+                <!--for i in range(len(tracks)):
+                        song_detalis = str(tracks[i])+" by "+str(artists[i])
+                    print(song_details)-->
+                <!--in line javascript?-->
+                <!---->
+                {% for i in track_dict: %}
+                    <center><br>{{ i, track_dict[i] }}</br></center>
+                {% endfor %}
+            </ul>
+    
+            
+            <div class="footer">
+            <center><p>Webapp Made with Love! By Jarelle and Jynelle 💖</p></center>
+            </div> 
+    
         </div>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
     </body>
 </html>
