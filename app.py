@@ -19,8 +19,8 @@ if len(sys.argv) > 1:
     urn = sys.argv[1]
 else:
     urn = 'spotify:artist:3jOstUTkEu2JkjvRdBA5Gu'
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id="5c44addc0ba641e5a3d272c06c37d9a7",
-                                               client_secret="f4e81362d2524685b196bca33ed9abe6",
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id="INSERT HERE",
+                                               client_secret="INSERT HERE",
                                               redirect_uri="http://localhost:5000/",
                                                scope="user-library-read user-top-read playlist-modify-public"))
 
