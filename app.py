@@ -7,8 +7,8 @@ import random
 
 """from spotipy.oauth2 import SpotifyClientCredentials
 
-sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id="5c44addc0ba641e5a3d272c06c37d9a7",
-                                                           client_secret="f4e81362d2524685b196bca33ed9abe6"))
+sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id="INSERT HERE",
+                                                           client_secret="INSERT HERE"))
 print("...selecting songs")
 results = sp.search(q='Lady Gaga', limit=50)
 for index, track in enumerate(results['tracks']['items']):
