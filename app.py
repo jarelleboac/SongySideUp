@@ -15,13 +15,56 @@ from spotipy.oauth2 import SpotifyOAuth
 
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id="5c44addc0ba641e5a3d272c06c37d9a7",
                                                client_secret="f4e81362d2524685b196bca33ed9abe6",
-                                               redirect_uri="http://localhost:5000/",
+                                              redirect_uri="http://localhost:5000/",
                                                scope="user-library-read user-top-read playlist-modify-public"))
 
-results = sp.current_user_saved_tracks()
+print("test!") 
+
+#show my top artists
+for sp_range in ['short_term', 'medium_term', 'long_term']:
+    print("range:", sp_range)
+
+    results = sp.current_user_top_artists(time_range=sp_range, limit=50)
+
+    for i, item in enumerate(results['items']):
+        print(i, item['name'])
+    print()
+
+"""def fave_artists(sp):
+    print("getting your fave artists...")
+    top_art_name=[]
+    top_art_uri=[]
+    ranges = ['short term', 'medium_term', 'long_term']
+    for i in ranges:
+        top_art_all_data= sp.current_user_top_artists(limit=50, time_range=r)
+        top_art_data= top_art_all_data['items']
+        for artist_data in top_art_data:
+            if artist_data["name"] not in top_art_name:
+                top_art_name.append(artist_data['name'])
+                top_art_uri.append(artist_data['uri'])
+    
+    followed_art_all_data= sp.current_user_followed_artists(limit=50)
+    followed_art_data=(followed_art_all_data['artists'])
+    for artist_data in followed_art_data["items"]:
+        if artist_data["name"] not in top_art_name:
+            top_art_uri.append(artist_data['name'])
+            top_art_uri.append(artist_data[uri])
+    return top_art_uri
+
+
+def agg_top_tracks(sp, top_art_uri):
+    print("getting top tracks")
+    top_tracks_uri=[]
+    for artist in top_artists_uri:
+        top_tracks_all_data= sp.artist_top_tracks(artist)
+        top_tracks_data= top_tracks_all_data['tracks']
+        for track_data in top_tracks_data:
+            top_tracks_uri.append(track_data['uri'])
+    return top_tracks_uri"""
+"""results = sp.current_user_saved_tracks()
 for idx, item in enumerate(results['items']):
     track = item['track']
-    print(idx, track['artists'][0]['name'], " – ", track['name'])
+    print(idx, track['artists'][0]['name'], " – ", track['name'])"""
 
 
 
